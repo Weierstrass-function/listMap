@@ -68,10 +68,10 @@ let rec readSize mess =
     let s = Console.ReadLine()
     try
         let num = int s
-        if num >= 0 then
+        if (num >= 0) && (num <= 10000) then
             Some num
         else
-            printfn "число '%s' не допустимый размер, возможные: 0 1 2 3 4..." s
+            printfn "число '%s' не допустимый размер, возможные: 0 1 2 3 4 ... 10000" s
             None
     with
         | :? System.FormatException ->
